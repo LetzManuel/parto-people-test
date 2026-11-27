@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Parto People</title>
+    <meta name="apple-mobile-web-app-title" content="Parto People" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#172A4D" />
+    <!-- The loading sign (src/ui/DiaryLoader.tsx). Kept here so it shows before the script bundle and styles.css arrive. -->
+    <style>
+      .diary-loader { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 12px 0; color: var(--ink-2, #5B6764); font: 500 13.5px/1.4 "Inter Variable", "Inter", "Segoe UI", system-ui, sans-serif; }
+      .diary-loader svg { width: 112px; height: auto; overflow: visible; }
+      .diary-loader.lg svg { width: 168px; }
+      .diary-loader.lg { gap: 14px; font-size: 14.5px; }
+      .diary-loader .dl-ink { fill: none; stroke: var(--accent, #3E7052); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 100 102; stroke-dashoffset: 100; }
+      .diary-loader .dl-ink1 { animation: dl-ink1 2.6s linear infinite; }
+      .diary-loader .dl-ink2 { animation: dl-ink2 2.6s linear infinite; }
+      .diary-loader .dl-pen { animation: dl-pen 2.6s linear infinite; }
+      .diary-loader .dl-pen-hand { animation: dl-hand .26s ease-in-out infinite alternate; }
+      .diary-loader .dl-nib { fill: var(--ink, #101917); }
+      .diary-loader .dl-barrel { fill: var(--ink, #101917); }
+      .diary-loader .dl-band { fill: #679B7A; }
+      @keyframes dl-ink1 { 0% { stroke-dashoffset: 100; opacity: 1; } 40% { stroke-dashoffset: 0; } 88% { opacity: 1; } 97%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+      @keyframes dl-ink2 { 0%, 47% { stroke-dashoffset: 100; opacity: 1; } 80% { stroke-dashoffset: 0; } 88% { opacity: 1; } 97%, 100% { stroke-dashoffset: 0; opacity: 0; } }
+      @keyframes dl-pen {
+        0% { transform: translate(28px, 28px); } 40% { transform: translate(96px, 27px); }
+        43% { transform: translate(62px, 22px); } 47% { transform: translate(28px, 44px); }
+        80% { transform: translate(71px, 44px); } 88% { transform: translate(84px, 34px); }
+        100% { transform: translate(28px, 28px); }
+      }
+      @keyframes dl-hand { from { transform: translateY(-1.2px); } to { transform: translateY(1.2px); } }
+      @media (prefers-reduced-motion: reduce) {
+        .diary-loader .dl-ink1, .diary-loader .dl-ink2, .diary-loader .dl-pen-hand { animation: none; stroke-dashoffset: 0; }
+        .diary-loader .dl-pen { animation: none; transform: translate(71px, 44px); }
+        .diary-loader svg { animation: dl-breathe 1.6s ease-in-out infinite alternate; }
+        @keyframes dl-breathe { from { opacity: .45; } to { opacity: 1; } }
+      }
+      #root > .boot { min-height: 100vh; display: grid; place-items: center; background: #F4F6F5; }
+      @media (prefers-color-scheme: dark) { #root > .boot { background: #0D1312; } #root > .boot .dl-ink { stroke: #8DBF9E; } #root > .boot .dl-nib, #root > .boot .dl-barrel { fill: #E8EFED; } }
+    </style>
+    <script type="module" crossorigin src="/assets/index-DzdiVqUS.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DObPyNX_.css">
+  </head>
+  <body>
+    <!-- Static copy of <DiaryLoader size="lg" /> while the scripts load; React replaces it. -->
+    <div id="root"></div>
+  </body>
+</html>
